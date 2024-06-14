@@ -55,9 +55,7 @@ router.post('/addtasks', (req, res) => {
   });
 });
 
-// @route   POST api/tasks
-// @desc    Create A Task
-// @access  Public
+//create a task
 //now().toString()
 router.post('/', upload.none(), (req, res) => {
   const tasks = readTasks();
@@ -86,9 +84,7 @@ router.post('/', upload.none(), (req, res) => {
   res.json(tasks);
 });
 
-// @route   PUT api/tasks/:id
-// @desc    Update A Task
-// @access  Public
+// edit api to update task
 router.put('/:id', (req, res) => {
   let tasks = readTasks();
   const taskIndex = tasks.findIndex(task => task.id === req.params.id);
@@ -108,9 +104,7 @@ router.put('/:id', (req, res) => {
   res.json(tasks[taskIndex]);
 });
 
-// @route   DELETE api/tasks/:id
-// @desc    Delete A Task
-// @access  Public
+//delete api to delete task
 router.delete('/:id', (req, res) => {
   let tasks = readTasks();
   const newTasks = tasks.filter(task => task.id !== req.params.id);
