@@ -23,6 +23,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/tasks', tasks);
+app.use(express.static('taskmanagement'));
 
 // listner port
 app.listen(port, () => {
